@@ -1,6 +1,8 @@
 import { GlobalStyle } from "./Global/Global";
 import { useState, useEffect } from "react";
 import ShowProducts from "./components/ProductsList/ProductsList";
+import Header from "./components/Header/Header";
+
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -13,6 +15,7 @@ const App = () => {
 
   return (
     <>
+    <Header/>
       <ShowProducts products={products} />
       <GlobalStyle />
     </>

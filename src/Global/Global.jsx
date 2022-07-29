@@ -64,5 +64,6 @@ table {
     --yellow: #FFCD07;
     --green-dark: #168821;
     --blue: #155BCB;
+	--white: #ffffff;
 }
 `
