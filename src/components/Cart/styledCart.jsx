@@ -71,7 +71,7 @@ export const Li = styled.li`
     background-color: unset;
     cursor: pointer;
     opacity: 0.5;
-    
+
     :hover {
       color: var(--red);
     }
@@ -105,7 +105,7 @@ export const DivFooter = styled.div`
     opacity: 0.8;
     cursor: pointer;
 
-    &:active{
+    &:active {
       transition: 0.1s;
       background-color: var(--gray);
       color: var(--white);

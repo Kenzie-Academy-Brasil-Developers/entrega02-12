@@ -10,7 +10,6 @@ export const HeaderStyled = styled.header`
   gap: 1rem;
   font-family: var(--font);
 
-  
   nav {
     display: flex;
     justify-content: center;

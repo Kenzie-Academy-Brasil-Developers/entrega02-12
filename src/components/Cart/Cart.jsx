@@ -1,4 +1,5 @@
 import { Section, DivHeaderCart, UlCart, DivFooter, Li } from "./styledCart";
+import { BsFillCartPlusFill } from "react-icons/bs";
 
 const Cart = ({ currentSale, remove, removeAll }) => {
   const result = currentSale.reduce((a, b) => b.price + a, 0);
@@ -11,7 +12,7 @@ const Cart = ({ currentSale, remove, removeAll }) => {
         </DivHeaderCart>
 
         <UlCart>
-          {currentSale.length > 0 &&
+          {currentSale.length > 0 ? (
             currentSale.map((product, index) => (
               <Li key={index}>
                 <img src={product.img} alt={product.name} />
@@ -21,7 +22,18 @@ const Cart = ({ currentSale, remove, removeAll }) => {
                 </div>
                 <button onClick={remove}>Remover</button>
               </Li>
-            ))}
+            ))
+          ) : (
+            <BsFillCartPlusFill
+              style={{
+                display: "flex",
+                width: "200px",
+                height: "150px",
+                margin: "3rem auto",
+                opacity: 0.3,
+              }}
+            />
+          )}
         </UlCart>
 
         <DivFooter>

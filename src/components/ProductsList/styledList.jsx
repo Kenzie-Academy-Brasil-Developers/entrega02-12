@@ -13,6 +13,7 @@ export const Ul = styled.ul`
     flex-wrap: wrap;
     width: 1010px;
     margin: 0 auto;
+    overflow: unset;
   }
 `;
 

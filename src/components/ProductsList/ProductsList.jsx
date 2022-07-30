@@ -15,7 +15,9 @@ const ShowProducts = ({ products, toast, sucess }) => {
     const nameProduto =
       event.target.parentNode.children[1].children[0].textContent;
     toast.info(`${nameProduto} Removido!`);
-    const filtrados = currentSale.filter((product) => product.name !== nameProduto);
+    const filtrados = currentSale.filter(
+      (product) => product.name !== nameProduto
+    );
     setCurrentSale(filtrados);
   };
 
@@ -42,11 +44,15 @@ const ShowProducts = ({ products, toast, sucess }) => {
     <Main>
       <section className="sectionList">
         <Ul>
-          <Product products={products} add={add} />
+          <Product products={products} add={add} toast={toast} />
         </Ul>
       </section>
-
-      <Cart currentSale={currentSale} setCart remove={remove} removeAll={removeAll} />
+      <Cart
+        currentSale={currentSale}
+        setCart
+        remove={remove}
+        removeAll={removeAll}
+      />
     </Main>
   );
 };

@@ -60,9 +60,6 @@ table {
     --gray-light: #E0E0E0;
     --gray-very-light: #F5F5F5;
     --red: #E60000;
-    --yellow: #FFCD07;
-    --green-dark: #168821;
-    --blue: #155BCB;
 	--white: #ffffff;
 	--font: 'Inter', sans-serif;
 }
