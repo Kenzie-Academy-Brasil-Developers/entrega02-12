@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-
 export const GlobalStyle = createGlobalStyle`
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -65,5 +64,6 @@ table {
     --green-dark: #168821;
     --blue: #155BCB;
 	--white: #ffffff;
+	--font: 'Inter', sans-serif;
 }
-`
+`;

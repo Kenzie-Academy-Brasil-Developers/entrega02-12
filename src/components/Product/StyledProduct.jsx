@@ -8,6 +8,15 @@ export const Li = styled.li`
   border: 2px solid var(--gray-light);
   border-radius: 0.2rem;
 
+  :hover {
+    box-shadow: 3px 3px 10px -5px;
+  }
+
+  :hover div > img {
+    filter: brightness(105%);
+    transform: scale(1.15);
+    transition: 0.5s;
+  }
 `;
 
 export const DivImage = styled.div`
@@ -18,7 +27,7 @@ export const DivImage = styled.div`
   align-items: center;
   background-color: var(--gray-very-light);
   border-radius: 0.2rem;
-  
+
   img {
     width: 192px;
     height: 100%;
@@ -34,29 +43,28 @@ export const DivInfo = styled.div`
   gap: 1rem;
   padding-left: 1rem;
 
-  h3{
+  h3 {
     font-weight: bolder;
     font-size: 1.5rem;
   }
 
-  p{
+  p {
     font-size: 0.9rem;
     color: var(--gray);
     opacity: 0.8;
     font-weight: bold;
   }
 
-  span{
-
+  span {
   }
-  
-  button{
+
+  button {
     width: 5rem;
     height: 2rem;
     background-color: var(--green);
     color: var(--white);
     border: unset;
     border-radius: 0.5rem;
+    cursor: pointer;
   }
-
 `;

@@ -8,6 +8,9 @@ export const HeaderStyled = styled.header`
   align-items: center;
   background-color: var(--gray-very-light);
   gap: 1rem;
+  font-family: var(--font);
+
+  
   nav {
     display: flex;
     justify-content: center;
@@ -20,6 +23,10 @@ export const HeaderStyled = styled.header`
       font-weight: 500;
       opacity: 0.5;
       position: relative;
+
+      @media screen and (min-width: 1400px) {
+        margin-left: 16rem;
+      }
 
       :hover {
         border: 2px solid var(--green);
@@ -34,6 +41,7 @@ export const HeaderStyled = styled.header`
       font-weight: 600;
       color: var(--white);
       border-radius: 0.5rem;
+      cursor: pointer;
     }
   }
 

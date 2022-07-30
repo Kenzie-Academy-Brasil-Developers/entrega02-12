@@ -39,40 +39,41 @@ export const Li = styled.li`
   margin: 0.5rem auto;
   align-items: flex-start;
 
-  img{
+  img {
     width: 25%;
     height: 80%;
     background-color: var(--gray-light);
     border-radius: 0.8rem;
     margin: auto 0;
   }
-  div{
+  div {
     display: flex;
     flex-direction: column;
     width: 50%;
     height: 100%;
-    padding: 1.2rem 0 0 0.5rem ;
+    padding: 1.2rem 0 0 0.5rem;
     gap: 0.7rem;
     justify-content: flex-start;
 
-    h4{
-        font-weight: bold;
+    h4 {
+      font-weight: bold;
     }
 
-    span{
-        opacity: 0.5;
-        font-size: 13px;
+    span {
+      opacity: 0.5;
+      font-size: 13px;
     }
-
   }
 
-  button{
+  button {
     margin-top: 0.7rem;
     border: unset;
     background-color: unset;
+    cursor: pointer;
     opacity: 0.5;
-    :hover{
-        color: var(--red);
+    
+    :hover {
+      color: var(--red);
     }
   }
 `;
@@ -103,5 +104,11 @@ export const DivFooter = styled.div`
     border-radius: 0.5rem;
     opacity: 0.8;
     cursor: pointer;
+
+    &:active{
+      transition: 0.1s;
+      background-color: var(--gray);
+      color: var(--white);
+    }
   }
 `;

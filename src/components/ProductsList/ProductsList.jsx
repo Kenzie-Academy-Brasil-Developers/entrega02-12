@@ -3,21 +3,41 @@ import { Ul, Main } from "./styledList";
 import Cart from "../Cart/Cart";
 import { useState } from "react";
 
-const ShowProducts = ({ products }) => {
-  const [cart, setCart] = useState([]);
-  const [totalCart, setTotalCart] = useState(0)
+const ShowProducts = ({ products, toast, sucess }) => {
+  const [currentSale, setCurrentSale] = useState([]);
 
-  const add = (event) => {
-    const id = parseInt(event.target.id);
-    const product = products.find((product) => product.id === id);
-    setCart((old) => [...old, product]);
-    total()
+  const removeAll = () => {
+    toast.info("Carrinho vazio!");
+    setCurrentSale([]);
   };
 
-  const total = () => {
-    const result = cart.reduce((a, b) => b.price + a, 0)
-    setTotalCart(result.toFixed())
-  }
+  const remove = (event) => {
+    const nameProduto =
+      event.target.parentNode.children[1].children[0].textContent;
+    toast.info(`${nameProduto} Removido!`);
+    const filtrados = currentSale.filter((product) => product.name !== nameProduto);
+    setCurrentSale(filtrados);
+  };
+
+  const add = (event) => {
+    const id = parseInt(event);
+    const product = products.find((product) => product.id === id);
+    const nome = product.name;
+    const find = currentSale.find((productCart) => nome === productCart.name);
+
+    if (currentSale.length > 0) {
+      if (find === undefined) {
+        sucess(nome);
+        setCurrentSale((old) => [...old, product]);
+      } else {
+        toast.error(`${nome} já foi inserido !`);
+      }
+    } else {
+      sucess(nome);
+      setCurrentSale((old) => [...old, product]);
+    }
+  };
+
   return (
     <Main>
       <section className="sectionList">
@@ -26,7 +46,7 @@ const ShowProducts = ({ products }) => {
         </Ul>
       </section>
 
-      <Cart cart={cart} totalCart={totalCart}/>
+      <Cart currentSale={currentSale} setCart remove={remove} removeAll={removeAll} />
     </Main>
   );
 };
